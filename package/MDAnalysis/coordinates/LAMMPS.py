@@ -58,6 +58,14 @@ Dump files
 The DumpReader expects ascii dump files written with the default
 `LAMMPS dump format`_ of 'atom'
 
+To read a dump file you can indicate the format with the ``format="LAMMPSDUMP`` keyword
+in case your filename has a non-standard file name extension::
+
+    u = mda.Universe("./topology.data", "./trajectory.lammpstrj", format="LAMMPSDUMP")
+
+With the above command, the :class:`DumpReader` will be used for the trajectory file "./trajectory.lammpstrj"
+and the :class:`~MDAnalysis.topology.LAMMPSParser.DATAParser` for the topology file "./topology.data".
+
 
 Example: Loading a LAMMPS simulation
 ------------------------------------
